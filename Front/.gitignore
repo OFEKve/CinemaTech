@@ -12,13 +12,6 @@ dist
 dist-ssr
 *.local
 
- echo "*.mp4" >> .gitignore
-echo "*.zip" >> .gitignore
-git add .gitignore
-git commit -m "Update .gitignore"
-git push origin main
-
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
