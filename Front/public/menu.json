@@ -1,0 +1,249 @@
+{
+  "categories": [
+    {
+      "name": "Food",
+      "items": [
+        {
+          "id": 1,
+          "name": "Popcorn",
+          "description": "Classic buttered popcorn, perfect for cinema.",
+          "price": 15.0,
+          "picture": "/image/1.png"
+        },
+        {
+          "id": 2,
+          "name": "Nachos",
+          "description": "Crunchy nachos served with cheese dip.",
+          "price": 18.0,
+          "picture": "/image/2.png"
+        },
+        {
+          "id": 3,
+          "name": "Hot Dog",
+          "description": "Juicy hot dog with mustard and ketchup.",
+          "price": 20.0,
+          "picture": "/image/3.png"
+        },
+        {
+          "id": 4,
+          "name": "Chicken Wings",
+          "description": "Spicy and crispy chicken wings.",
+          "price": 35.0,
+          "picture": "/image/4.png"
+        },
+        {
+          "id": 5,
+          "name": "Pizza Slice",
+          "description": "Cheese and pepperoni pizza slice.",
+          "price": 25.0,
+          "picture": "/image/5.png"
+        },
+        {
+          "id": 6,
+          "name": "Candy Pack",
+          "description": "Mixed candy pack with chocolate and gummies.",
+          "price": 10.0,
+          "picture": "/image/6.png"
+        },
+        {
+          "id": 7,
+          "name": "Churros",
+          "description": "Delicious churros with sugar and cinnamon.",
+          "price": 18.0,
+          "picture": "/image/7.png"
+        },
+        {
+          "id": 8,
+          "name": "Pretzel",
+          "description": "Soft salted pretzel served with mustard.",
+          "price": 15.0,
+          "picture": "/image/8.png"
+        },
+        {
+          "id": 9,
+          "name": "Fruit Snacks",
+          "description": "Fresh fruit snacks for a healthy treat.",
+          "price": 12.0,
+          "picture": "/image/9.png"
+        },
+        {
+          "id": 10,
+          "name": "Ice Cream",
+          "description": "Creamy vanilla ice cream served in a cone.",
+          "price": 10.0,
+          "picture": "/image/10.png"
+        }
+      ]
+    },
+    {
+      "name": "Drinks",
+      "items": [
+        {
+          "id": 1,
+          "name": "Soft Drink - Small",
+          "description": "Refreshing soft drink in a small size.",
+          "price": 10.0,
+          "size": "Small",
+          "picture": "/image/11.png"
+        },
+        {
+          "id": 2,
+          "name": "Soft Drink - Medium",
+          "description": "Refreshing soft drink in a medium size.",
+          "price": 12.0,
+          "size": "Medium",
+          "picture": "/image/12.png"
+        },
+        {
+          "id": 3,
+          "name": "Soft Drink - Large",
+          "description": "Refreshing soft drink in a large size.",
+          "price": 15.0,
+          "size": "Large",
+          "picture": "/image/13.png"
+        },
+        {
+          "id": 4,
+          "name": "Water - Small",
+          "description": "Bottled water in a small size.",
+          "price": 7.0,
+          "size": "Small",
+          "picture": "/image/14.png"
+        },
+        {
+          "id": 5,
+          "name": "Water - Large",
+          "description": "Bottled water in a large size.",
+          "price": 10.0,
+          "size": "Large",
+          "picture": "/image/15.png"
+        },
+        {
+          "id": 6,
+          "name": "Hot Chocolate",
+          "description": "Hot chocolate with whipped cream.",
+          "price": 18.0,
+          "size": "Regular",
+          "picture": "/image/16.png"
+        },
+        {
+          "id": 7,
+          "name": "Iced Tea - Small",
+          "description": "Cold iced tea served in a small size.",
+          "price": 10.0,
+          "size": "Small",
+          "picture": "/image/17.png"
+        },
+        {
+          "id": 8,
+          "name": "Iced Tea - Large",
+          "description": "Cold iced tea served in a large size.",
+          "price": 15.0,
+          "size": "Large",
+          "picture": "/image/18.png"
+        },
+        {
+          "id": 9,
+          "name": "Energy Drink",
+          "description": "Caffeinated energy drink.",
+          "price": 20.0,
+          "size": "Regular",
+          "picture": "/image/19.png"
+        },
+        {
+          "id": 10,
+          "name": "Milkshake - Chocolate",
+          "description": "Chocolate milkshake topped with whipped cream.",
+          "price": 25.0,
+          "size": "Regular",
+          "picture": "/image/20.png"
+        }
+      ]
+    },
+    {
+      "name": "Deals",
+      "items": [
+        {
+          "id": 1,
+          "name": "Popcorn + Soft Drink",
+          "description": "Get popcorn and any soft drink of your choice.",
+          "price": 20.0,
+          "components": ["Popcorn", "Soft Drink - Medium"],
+          "picture": "/image/21.png"
+        },
+        {
+          "id": 2,
+          "name": "Nachos + Drink",
+          "description": "Crunchy nachos with a small soft drink.",
+          "price": 22.0,
+          "components": ["Nachos", "Soft Drink - Small"],
+          "picture": "/image/22.png"
+        },
+        {
+          "id": 3,
+          "name": "Pizza Slice + Soft Drink",
+          "description": "Cheese pizza slice with a medium soft drink.",
+          "price": 30.0,
+          "components": ["Pizza Slice", "Soft Drink - Medium"],
+          "picture": "/image/23.png"
+        },
+        {
+          "id": 4,
+          "name": "Hot Dog + Drink",
+          "description": "Hot dog with a regular water bottle.",
+          "price": 22.0,
+          "components": ["Hot Dog", "Water - Regular"],
+          "picture": "/image/24.png"
+        },
+        {
+          "id": 5,
+          "name": "Candy Pack + Soft Drink",
+          "description": "Candy pack along with a small drink.",
+          "price": 18.0,
+          "components": ["Candy Pack", "Soft Drink - Small"],
+          "picture": "/image/25.png"
+        },
+        {
+          "id": 6,
+          "name": "Churros + Hot Chocolate",
+          "description": "Churros with a hot chocolate drink.",
+          "price": 28.0,
+          "components": ["Churros", "Hot Chocolate"],
+          "picture": "/image/26.png"
+        },
+        {
+          "id": 7,
+          "name": "Ice Cream + Drink",
+          "description": "Ice cream paired with a large soft drink.",
+          "price": 25.0,
+          "components": ["Ice Cream", "Soft Drink - Large"],
+          "picture": "/image/27.png"
+        },
+        {
+          "id": 8,
+          "name": "Combo Meal",
+          "description": "Pizza slice, chicken wings, and a drink.",
+          "price": 45.0,
+          "components": ["Pizza Slice", "Chicken Wings", "Soft Drink - Medium"],
+          "picture": "/image/28.png"
+        },
+        {
+          "id": 9,
+          "name": "Pretzel + Drink",
+          "description": "Pretzel with any beverage of your choice.",
+          "price": 20.0,
+          "components": ["Pretzel", "Soft Drink - Large"],
+          "picture": "/image/29.png"
+        },
+        {
+          "id": 10,
+          "name": "Fruit Snacks + Water",
+          "description": "Healthy fruit snacks with a large water bottle.",
+          "price": 15.0,
+          "components": ["Fruit Snacks", "Water - Large"],
+          "picture": "/image/30.png"
+        }
+      ]
+    }
+  ]
+}
