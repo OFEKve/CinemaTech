@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Raleway", sans-serif;
+}
+.hero-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)),
+    url("/hero.png");
+}
+
+.shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
+  background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.error-page--content::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.5) 0,
+    rgba(0, 0, 0, 0.2) 45%,
+    rgba(0, 0, 0, 0.1) 55%,
+    transparent 70%
+  );
+  bottom: -10vw;
+  content: "";
+  left: 10vw;
+  position: absolute;
+  right: 10vw;
+  top: -10vw;
+  z-index: -1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1a202c;
+}
+.video-tv-wrapper {
+  position: relative;
+  width: 400px; /* גודל המסגרת */
+  height: 300px; /* גובה המסגרת */
+  margin: 0 auto;
+}
+
+.tv-frame {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-inside-tv {
+  position: absolute;
+  top: 12%; /* כיוונון אנכי */
+  left: 10%; /* כיוונון אופקי */
+  width: 80%;
+  height: 72%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.title-mov {
+  margin-top: 100px;
+  font-size: 60px;
+
+  @media (max-width: 768px) {
+    font-size: 40px; /* גודל טקסט מוקטן למסכים קטנים */
+  }
+
+  @media (max-width: 480px) {
+    font-size: 30px; /* גודל טקסט עוד יותר קטן למסכים מאוד קטנים */
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "react-vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "Backend/server.js",
+  "scripts": {
+<<<<<<< HEAD
+    "install-all": "cd Back && npm install && cd ../Front && npm install",
+    "build": "npm run build-front && npm run build-back",
+    "build-front": "cd Front && npm run build",
+    "build-back": "cd Back && npm run build",
+    "start": "cd Back && npm start",
+    "dev": "concurrently \"cd Back && npm run dev\" \"cd Front && npm run dev\"",
+=======
+    "dev": "nodemon Backend/server.js",
+    "build": "vite build",
+>>>>>>> c3bca94e1b3e1e7574c27c9c6b96009d24412dc7
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+<<<<<<< HEAD
+    "concurrently": "^8.0.0",
+=======
+>>>>>>> c3bca94e1b3e1e7574c27c9c6b96009d24412dc7
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "@sendgrid/mail": "^8.1.4",
+    "aws-sdk": "^2.1692.0",
+    "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cookies": "^0.9.1",
+    "cookies-parser": "^1.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.468.0",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.8.4",
+    "moongose": "^1.0.0",
+    "nodemailer": "^6.9.16",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.4.0",
+    "react-player": "^2.16.0",
+    "react-qr-code": "^2.0.15",
+    "react-router-dom": "^7.0.2",
+    "route": "^0.2.5",
+    "routes": "^2.1.0",
+    "swiper": "^11.1.15",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.14",
+    "vite": "^5.4.10"
+  }
+}

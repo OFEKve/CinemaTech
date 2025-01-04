@@ -1,0 +1,14 @@
+node_modules
+<<<<<<< HEAD
+.env
+# Large files
+*.mp4
+*.mov
+*.avi
+public/videos/
+dist/
+Front/dist/
+Back/dist/
+Back/public/
+=======
+>>>>>>> c3bca94e1b3e1e7574c27c9c6b96009d24412dc7

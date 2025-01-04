@@ -1,0 +1,60 @@
+{
+  "name": "react-vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@paypal/react-paypal-js": "^8.7.0",
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dom-to-image": "^2.6.0",
+    "dom-to-image-more": "^3.5.0",
+    "html-to-image": "^1.11.11",
+    "jspdf": "^2.5.2",
+    "lucide-react": "^0.468.0",
+    "qrcode": "^1.5.4",
+    "qrcode.react": "^4.2.0",
+    "react": "^18.3.1",
+    "react-confetti": "^6.2.2",
+    "react-datepicker": "^7.5.0",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.4.0",
+    "react-player": "^2.16.0",
+    "react-qr-code": "^2.0.15",
+    "react-router-dom": "^7.0.2",
+    "react-slick": "^0.30.3",
+    "react-toastify": "^11.0.2",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.13",
+    "swiper": "^11.1.15",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.14",
+<<<<<<< HEAD
+    "terser": "^5.37.0",
+=======
+>>>>>>> c3bca94e1b3e1e7574c27c9c6b96009d24412dc7
+    "vite": "^5.4.10"
+  }
+}
