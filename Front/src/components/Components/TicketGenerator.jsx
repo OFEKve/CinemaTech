@@ -115,7 +115,7 @@ const CardWrapper = styled.div`
 
 const Card = styled.div`
   width: 80%;
-  height: 70%;
+  height: 90%;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.8s;
@@ -186,7 +186,7 @@ const Info = styled.p`
 `
 
 const DownloadButton = styled.button`
-  margin-top: 10px;
+  margin-top: 3 + px;
   padding: 10px 20px;
   background-color: transparent;
   color: white;

@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -51,10 +50,6 @@
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss": "^3.4.14",
-<<<<<<< HEAD
-    "terser": "^5.37.0",
-=======
->>>>>>> c3bca94e1b3e1e7574c27c9c6b96009d24412dc7
-    "vite": "^5.4.10"
+    "terser": "^5.37.0"
   }
 }
