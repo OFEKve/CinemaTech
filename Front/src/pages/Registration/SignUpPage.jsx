@@ -4,7 +4,8 @@ import { useAuthStore } from "../../store/authUser.js"
 import styled from "styled-components"
 
 const Container = styled.div`
-  background: url("/hero.png") no-repeat center center/cover;
+  background: url("https://res.cloudinary.com/duucxuyvk/image/upload/v1736410637/videos/images/hero.jpg")
+    no-repeat center center/cover;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -116,7 +117,10 @@ const SignUpPage = () => {
     <Container>
       <Header>
         <Link to={"/"}>
-          <Logo src="/netflix-logo.png" alt="logo" />
+          <Logo
+            src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410637/videos/images/zqjtfyt3ssnhmszf6ope.png"
+            alt="logo"
+          />
         </Link>
       </Header>
 

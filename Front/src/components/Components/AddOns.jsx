@@ -156,10 +156,10 @@ const AddOns = ({
   hallNumber,
 }) => {
   if (!open) return null
-  const [currentStep, setCurrentStep] = useState(1) // שלב נוכחי בתהליך
+  const [currentStep, setCurrentStep] = useState(1)
 
-  const [paymentSuccess, setPaymentSuccess] = useState(false) // מצב של תשלום מוצלח
-  const [cartItems, setCartItems] = useState([]) // מוצרים שנבחרו
+  const [paymentSuccess, setPaymentSuccess] = useState(false)
+  const [cartItems, setCartItems] = useState([])
   const a = selectedSeats.length
 
   const [totalPrice, setTotalPrice] = useState(a * seatPrice)
@@ -176,12 +176,10 @@ const AddOns = ({
 
   const handleAddItem = (item) => {
     setCartItems((prevItems) => {
-      // בדיקה אם המוצר כבר בעגלה
       const existingItemIndex = prevItems.findIndex((i) => i.id === item.id)
       console.log(username.username)
 
       if (existingItemIndex !== -1) {
-        // אם המוצר קיים, עדכן את הכמות
         const updatedItems = prevItems.map((i) =>
           i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
         )
@@ -291,7 +289,7 @@ const AddOns = ({
                   }}
                 >
                   <PayPalButtons
-                    disabled={totalPrice <= 0} // כפתור מושבת אם totalPrice קטן או שווה ל-0
+                    disabled={totalPrice <= 0}
                     createOrder={(data, actions) => {
                       return actions.order.create({
                         purchase_units: [
@@ -311,7 +309,6 @@ const AddOns = ({
                   />
                 </div>
               </CartItemText>
-              {/* הצגת הכיסאות שנבחרו */}
               {selectedSeats.length > 0 && (
                 <>
                   <h3 style={{ color: "#ff4d4d", marginBottom: "10px" }}>
@@ -327,7 +324,7 @@ const AddOns = ({
                     {selectedSeats.map((seat, index) => (
                       <CartItem key={index}>
                         <ProductImage
-                          src="../../public/chair-red.png"
+                          src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410636/videos/images/chair-red.jpg"
                           alt="Seat"
                         />
                         <CartItemText>Seat {seat}</CartItemText>
@@ -336,7 +333,6 @@ const AddOns = ({
                   </div>
                 </>
               )}
-              {/* הצגת מוצרים שנבחרו */}
               <h3 style={{ color: "#ff4d4d", marginBottom: "10px" }}>
                 Selected Items:
               </h3>

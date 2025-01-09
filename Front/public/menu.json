@@ -8,70 +8,70 @@
           "name": "Popcorn",
           "description": "Classic buttered popcorn, perfect for cinema.",
           "price": 15.0,
-          "picture": "/image/1.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410625/videos/images/image/popcorn.png"
         },
         {
           "id": 2,
           "name": "Nachos",
           "description": "Crunchy nachos served with cheese dip.",
           "price": 18.0,
-          "picture": "/image/2.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410627/videos/images/image/nachos.png"
         },
         {
           "id": 3,
           "name": "Hot Dog",
           "description": "Juicy hot dog with mustard and ketchup.",
           "price": 20.0,
-          "picture": "/image/3.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410632/videos/images/image/hotdog.png"
         },
         {
           "id": 4,
           "name": "Chicken Wings",
           "description": "Spicy and crispy chicken wings.",
           "price": 35.0,
-          "picture": "/image/4.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410632/videos/images/image/chickenwings.png"
         },
         {
           "id": 5,
           "name": "Pizza Slice",
           "description": "Cheese and pepperoni pizza slice.",
           "price": 25.0,
-          "picture": "/image/5.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410634/videos/images/image/pizza.png"
         },
         {
           "id": 6,
           "name": "Candy Pack",
           "description": "Mixed candy pack with chocolate and gummies.",
           "price": 10.0,
-          "picture": "/image/6.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410634/videos/images/image/candyy.png"
         },
         {
           "id": 7,
           "name": "Churros",
           "description": "Delicious churros with sugar and cinnamon.",
           "price": 18.0,
-          "picture": "/image/7.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410634/videos/images/image/churros.png"
         },
         {
           "id": 8,
           "name": "Pretzel",
           "description": "Soft salted pretzel served with mustard.",
           "price": 15.0,
-          "picture": "/image/8.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410634/videos/images/image/pretzel.png"
         },
         {
           "id": 9,
           "name": "Fruit Snacks",
           "description": "Fresh fruit snacks for a healthy treat.",
           "price": 12.0,
-          "picture": "/image/9.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410634/videos/images/image/fruitsnack.png"
         },
         {
           "id": 10,
           "name": "Ice Cream",
           "description": "Creamy vanilla ice cream served in a cone.",
           "price": 10.0,
-          "picture": "/image/10.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410625/videos/images/image/icecream.png"
         }
       ]
     },
@@ -84,7 +84,7 @@
           "description": "Refreshing soft drink in a small size.",
           "price": 10.0,
           "size": "Small",
-          "picture": "/image/11.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410625/videos/images/image/small.png"
         },
         {
           "id": 2,
@@ -92,7 +92,7 @@
           "description": "Refreshing soft drink in a medium size.",
           "price": 12.0,
           "size": "Medium",
-          "picture": "/image/12.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410625/videos/images/image/medium.png"
         },
         {
           "id": 3,
@@ -100,7 +100,7 @@
           "description": "Refreshing soft drink in a large size.",
           "price": 15.0,
           "size": "Large",
-          "picture": "/image/13.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410625/videos/images/image/medium.png"
         },
         {
           "id": 4,
@@ -108,7 +108,7 @@
           "description": "Bottled water in a small size.",
           "price": 7.0,
           "size": "Small",
-          "picture": "/image/14.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410624/videos/images/image/waterS.png"
         },
         {
           "id": 5,
@@ -116,7 +116,7 @@
           "description": "Bottled water in a large size.",
           "price": 10.0,
           "size": "Large",
-          "picture": "/image/15.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410624/videos/images/image/waterL.png"
         },
         {
           "id": 6,
@@ -124,7 +124,7 @@
           "description": "Hot chocolate with whipped cream.",
           "price": 18.0,
           "size": "Regular",
-          "picture": "/image/16.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410624/videos/images/image/shoko.png"
         },
         {
           "id": 7,
@@ -132,7 +132,7 @@
           "description": "Cold iced tea served in a small size.",
           "price": 10.0,
           "size": "Small",
-          "picture": "/image/17.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410625/videos/images/image/teaS.png"
         },
         {
           "id": 8,
@@ -140,7 +140,7 @@
           "description": "Cold iced tea served in a large size.",
           "price": 15.0,
           "size": "Large",
-          "picture": "/image/18.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410627/videos/images/image/teaL.png"
         },
         {
           "id": 9,
@@ -148,7 +148,7 @@
           "description": "Caffeinated energy drink.",
           "price": 20.0,
           "size": "Regular",
-          "picture": "/image/19.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410626/videos/images/image/redbull.png"
         },
         {
           "id": 10,
@@ -156,7 +156,7 @@
           "description": "Chocolate milkshake topped with whipped cream.",
           "price": 25.0,
           "size": "Regular",
-          "picture": "/image/20.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410627/videos/images/image/milkshake.png"
         }
       ]
     },
@@ -169,7 +169,7 @@
           "description": "Get popcorn and any soft drink of your choice.",
           "price": 20.0,
           "components": ["Popcorn", "Soft Drink - Medium"],
-          "picture": "/image/21.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410628/videos/images/image/Popcorn_Soft_Drink.png"
         },
         {
           "id": 2,
@@ -177,7 +177,7 @@
           "description": "Crunchy nachos with a small soft drink.",
           "price": 22.0,
           "components": ["Nachos", "Soft Drink - Small"],
-          "picture": "/image/22.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410628/videos/images/image/Nachos_Drink.png"
         },
         {
           "id": 3,
@@ -185,7 +185,7 @@
           "description": "Cheese pizza slice with a medium soft drink.",
           "price": 30.0,
           "components": ["Pizza Slice", "Soft Drink - Medium"],
-          "picture": "/image/23.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410628/videos/images/image/Pizza_Slice_Soft_Drink.png"
         },
         {
           "id": 4,
@@ -193,7 +193,7 @@
           "description": "Hot dog with a regular water bottle.",
           "price": 22.0,
           "components": ["Hot Dog", "Water - Regular"],
-          "picture": "/image/24.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410629/videos/images/image/HotDog_Drink.png"
         },
         {
           "id": 5,
@@ -201,7 +201,7 @@
           "description": "Candy pack along with a small drink.",
           "price": 18.0,
           "components": ["Candy Pack", "Soft Drink - Small"],
-          "picture": "/image/25.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410631/videos/images/image/Candy_Pack_SoftDrink.png"
         },
         {
           "id": 6,
@@ -209,7 +209,7 @@
           "description": "Churros with a hot chocolate drink.",
           "price": 28.0,
           "components": ["Churros", "Hot Chocolate"],
-          "picture": "/image/26.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410630/videos/images/image/Churros_Hot_Chocolate.png"
         },
         {
           "id": 7,
@@ -217,7 +217,7 @@
           "description": "Ice cream paired with a large soft drink.",
           "price": 25.0,
           "components": ["Ice Cream", "Soft Drink - Large"],
-          "picture": "/image/27.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410630/videos/images/image/Ice_Cream_Drink.png"
         },
         {
           "id": 8,
@@ -225,7 +225,7 @@
           "description": "Pizza slice, chicken wings, and a drink.",
           "price": 45.0,
           "components": ["Pizza Slice", "Chicken Wings", "Soft Drink - Medium"],
-          "picture": "/image/28.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410630/videos/images/image/Combo_Meal.png"
         },
         {
           "id": 9,
@@ -233,7 +233,7 @@
           "description": "Pretzel with any beverage of your choice.",
           "price": 20.0,
           "components": ["Pretzel", "Soft Drink - Large"],
-          "picture": "/image/29.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410631/videos/images/image/Pretzel_Drink.png"
         },
         {
           "id": 10,
@@ -241,7 +241,7 @@
           "description": "Healthy fruit snacks with a large water bottle.",
           "price": 15.0,
           "components": ["Fruit Snacks", "Water - Large"],
-          "picture": "/image/30.png"
+          "picture": "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410632/videos/images/image/Fruit_Snacks_Water.png"
         }
       ]
     }

@@ -1,12 +1,15 @@
-import { useRef, useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import QRCode from "react-qr-code"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import styled from "styled-components"
 import Confetti from "react-confetti"
-import { Download } from "lucide-react"
+import { Download, Share2 } from "lucide-react" // הוסף את Share2
 import { ArrowRight } from "lucide-react"
 import jsPDF from "jspdf"
+const generateOrderNumber = () => {
+  return `ORD-${Math.floor(10000 + Math.random() * 90000)}`
+}
 
 const TicketContainer = styled.div`
   display: flex;
@@ -104,30 +107,17 @@ const ThankYouMessage = styled.div`
   box-shadow: 0 4px 10px rgba(255, 253, 208, 0.4); /* צבע קרם */
 `
 
-const CardWrapper = styled.div`
-  width: 400px;
-  height: 500px;
-  perspective: 1500px;
+const CardsContainer = styled.div`
   display: flex;
+  gap: 20px;
   justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
 `
 
-const Card = styled.div`
-  width: 80%;
-  height: 90%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.8s;
-  transform: ${({ isFlipped }) =>
-    isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"};
-`
-
 const CardFront = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+  width: 400px;
+  height: 500px;
   background-color: #fff;
   border-radius: 15px;
   overflow: hidden;
@@ -138,11 +128,8 @@ const CardFront = styled.div`
 `
 
 const CardBack = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
+  width: 400px;
+  height: 500px;
   background-color: #2b2e3b;
   color: #fff;
   border-radius: 15px;
@@ -185,6 +172,11 @@ const Info = styled.p`
   color: #ddd;
 `
 
+const ButtonsContainer = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+`
 const DownloadButton = styled.button`
   margin-top: 3 + px;
   padding: 10px 20px;
@@ -208,7 +200,15 @@ const DownloadButton = styled.button`
     font-size: 14px;
   }
 `
+const ShareButton = styled(DownloadButton)`
+  background-color: transparent;
+  border: 1px solid #25d366; // צבע ווטסאפ
 
+  &:hover {
+    background-color: #25d366;
+    color: white;
+  }
+`
 const TicketGenerator = ({
   movieName,
   movieImage,
@@ -218,83 +218,27 @@ const TicketGenerator = ({
   selectedDate,
   hallNumber,
 }) => {
-  const cardRef = useRef(null)
-  const [isFlipped, setIsFlipped] = useState(false)
   const navigate = useNavigate()
   const [showConfetti, setShowConfetti] = useState(true)
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowConfetti(false)
-    }, 4000) // 4 שניות
-
-    return () => clearTimeout(timer) // ניקוי הטיימר אם הקומפוננטה יוצאת מהמסך
-  }, [])
-
-  const qrData = {
-    movieName,
-    selectedSeats,
-    movieImage,
-    selectedTimeSlot,
-    date: selectedDate,
-    hallNumber,
-  }
-  const handleDownload = (ticket) => {
-    if (!ticket) {
-      console.error("Ticket data is undefined.")
-      return
-    }
-
-    const doc = new jsPDF()
-
-    doc.setFont("helvetica", "bold")
-    doc.setFontSize(22)
-    doc.setTextColor(40, 40, 40)
-    doc.text(" CinemaTech Ticket Invoice", 105, 20, { align: "center" })
-
-    // הוספת קו הפרדה
-    doc.setDrawColor(200, 0, 0) // צבע אדום
-    doc.setLineWidth(0.5)
-    doc.line(20, 30, 190, 30)
-
-    // מידע על המשתמש
-    doc.setFont("helvetica", "normal")
-    doc.setFontSize(14)
-    doc.setTextColor(60, 60, 60)
-    doc.text(`Hello, ${username}`, 20, 40)
-
-    // מידע על הסרט
-    doc.setFont("helvetica", "bold")
-    doc.setFontSize(16)
-    doc.setTextColor(30, 30, 30)
-    doc.text("Movie Information:", 20, 50)
-
-    doc.setFont("helvetica", "normal")
-    doc.setFontSize(12)
-    doc.setTextColor(60, 60, 60)
-    doc.text(` Movie: ${ticket.movieName}`, 20, 60)
-    doc.text(` Seat: ${ticket.selectedSeats}`, 20, 70)
-    doc.text(` Hall: ${ticket.hallNumber}`, 20, 80)
-    doc.text(` Time: ${ticket.selectedTimeSlot}`, 20, 90)
-    doc.text(` Date: ${ticket.selectedDate}`, 20, 100)
-
-    // הוספת קו הפרדה נוסף
-    doc.setDrawColor(0, 0, 0)
-    doc.line(20, 110, 190, 110)
-
-    // הוספת פסקת תודה
-    doc.setFont("helvetica", "italic")
-    doc.setFontSize(14)
-    doc.setTextColor(100, 100, 100)
-    doc.text("Thank you for choosing CinemaTech! Enjoy the movie! ", 105, 120, {
-      align: "center",
-    })
-
-    // שמירת הקובץ
-    doc.save(`CinemaTech-Ticket-${username}.pdf`)
-  }
+  const [orderNumber, setOrderNumber] = useState(generateOrderNumber()) // יצירת מספר הזמנה חדש
 
   const saveTicketToUser = async () => {
+    const qrData = {
+      orderNumber, // הוספת מספר הזמנה
+      movieName,
+      selectedSeats,
+      movieImage,
+      selectedTimeSlot,
+      date: selectedDate,
+      hallNumber,
+    }
+
     try {
+      console.log("Ticket data being sent:", {
+        username,
+        ticket: qrData,
+      })
+
       const response = await fetch("http://localhost:3000/api/v1/tickets", {
         method: "POST",
         headers: {
@@ -323,46 +267,154 @@ const TicketGenerator = ({
   useEffect(() => {
     saveTicketToUser()
   }, [])
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowConfetti(false)
+    }, 4000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  const qrData = {
+    orderNumber,
+    movieName,
+    selectedSeats,
+    movieImage,
+    selectedTimeSlot,
+    date: selectedDate,
+    hallNumber,
+  }
+
+  const handleDownload = (ticket) => {
+    if (!ticket) {
+      console.error("Ticket data is undefined.")
+      return
+    }
+
+    const doc = new jsPDF()
+
+    doc.setFont("helvetica", "bold")
+    doc.setFontSize(22)
+    doc.setTextColor(40, 40, 40)
+    doc.text("CinemaTech Ticket Invoice", 105, 20, { align: "center" })
+
+    doc.setDrawColor(200, 0, 0)
+    doc.setLineWidth(0.5)
+    doc.line(20, 30, 190, 30)
+
+    doc.setFont("helvetica", "normal")
+    doc.setFontSize(14)
+    doc.setTextColor(60, 60, 60)
+    doc.text(`Hello, ${username}`, 20, 40)
+
+    doc.setFont("helvetica", "bold")
+    doc.setFontSize(16)
+    doc.setTextColor(30, 30, 30)
+    doc.text("Movie Information:", 20, 50)
+
+    doc.setFont("helvetica", "normal")
+    doc.setFontSize(12)
+    doc.setTextColor(60, 60, 60)
+    doc.text(`Order Number: ${ticket.orderNumber}`, 20, 60)
+
+    doc.text(`Movie: ${ticket.movieName}`, 20, 60)
+    doc.text(`Seat: ${ticket.selectedSeats}`, 20, 70)
+    doc.text(`Hall: ${ticket.hallNumber}`, 20, 80)
+    doc.text(`Time: ${ticket.selectedTimeSlot}`, 20, 90)
+    doc.text(`Date: ${ticket.selectedDate}`, 20, 100)
+
+    doc.setDrawColor(0, 0, 0)
+    doc.line(20, 110, 190, 110)
+
+    doc.setFont("helvetica", "italic")
+    doc.setFontSize(14)
+    doc.setTextColor(100, 100, 100)
+    doc.text("Thank you for choosing CinemaTech! Enjoy the movie!", 105, 120, {
+      align: "center",
+    })
+
+    doc.save(`CinemaTech-Ticket-${username}.pdf`)
+  }
+  const handleShare = async (ticket) => {
+    if (!ticket) {
+      console.error("Ticket data is undefined.")
+      return
+    }
+
+    const ticketDetails = `
+    📄 Order Number: ${ticket.orderNumber}
+
+🎬 Movie Ticket from CinemaTech!
+🎥 Movie: ${ticket.movieName}
+💺 Seats: ${ticket.selectedSeats}
+🏛️ Hall: ${ticket.hallNumber}
+🕒 Time: ${ticket.selectedTimeSlot}
+📅 Date: ${ticket.selectedDate}
+    `.trim()
+
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: "CinemaTech Movie Ticket",
+          text: ticketDetails,
+        })
+        toast.success("Shared successfully!")
+      } else {
+        // פתרון חלופי אם Web Share API לא נתמך
+        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(ticketDetails)}`
+        window.location.href = whatsappUrl
+      }
+    } catch (error) {
+      console.error("Error sharing:", error)
+      toast.error("Failed to share ticket")
+    }
+  }
+  console.log("Generated Order Number:", orderNumber)
+  console.log("Data sent to server:", {
+    username,
+    ticket: qrData,
+  })
 
   return (
     <TicketContainer>
       {showConfetti && <Confetti />}
       <ThankYouMessage>Thank you for your payment! 🎉</ThankYouMessage>
-      <CardWrapper
-        onMouseEnter={() => setIsFlipped(true)}
-        onMouseLeave={() => setIsFlipped(false)}
-      >
-        <Card ref={cardRef} isFlipped={isFlipped}>
-          <CardFront>
-            <Poster src={movieImage} alt={movieName} />
-          </CardFront>
-
-          <CardBack>
-            <Details>
-              <InfoSection>
-                <Info>
-                  <strong>Movie:</strong> {movieName}
-                </Info>
-                <Info>
-                  <strong>Seats:</strong> {selectedSeats.join(", ")}
-                </Info>
-                <Info>
-                  <strong>Time:</strong> {selectedTimeSlot}
-                </Info>
-                <Info>
-                  <strong>Date:</strong> {qrData.date}
-                </Info>
-                <Info>
-                  <strong>Hall:</strong> {hallNumber}
-                </Info>
-              </InfoSection>
-              <QRSection>
-                <QRCode value={JSON.stringify(qrData)} size={150} />
-              </QRSection>
-            </Details>
+      <CardsContainer>
+        <CardFront>
+          <Poster src={movieImage} alt={movieName} />
+        </CardFront>
+        <CardBack>
+          <Details>
+            <InfoSection>
+              <Info>
+                <strong>Order Number:</strong> {orderNumber}
+              </Info>
+              <Info>
+                <strong>Movie:</strong> {movieName}
+              </Info>
+              <Info>
+                <strong>Seats:</strong> {selectedSeats.join(", ")}
+              </Info>
+              <Info>
+                <strong>Time:</strong> {selectedTimeSlot}
+              </Info>
+              <Info>
+                <strong>Date:</strong> {selectedDate}
+              </Info>
+              <Info>
+                <strong>Hall:</strong> {hallNumber}
+              </Info>
+            </InfoSection>
+            <QRSection>
+              <QRCode value={JSON.stringify(qrData)} size={150} />
+            </QRSection>
+          </Details>
+          <ButtonsContainer>
             <DownloadButton
               onClick={() =>
                 handleDownload({
+                  orderNumber,
+
                   movieName,
                   selectedSeats: selectedSeats.join(", "),
                   hallNumber,
@@ -373,16 +425,28 @@ const TicketGenerator = ({
             >
               <Download /> Download Ticket
             </DownloadButton>
-          </CardBack>
-        </Card>
-      </CardWrapper>
+            <ShareButton
+              onClick={() =>
+                handleShare({
+                  orderNumber,
+
+                  movieName,
+                  selectedSeats: selectedSeats.join(", "),
+                  hallNumber,
+                  selectedTimeSlot,
+                  selectedDate,
+                })
+              }
+            >
+              <Share2 /> Share on WhatsApp
+            </ShareButton>
+          </ButtonsContainer>
+        </CardBack>
+      </CardsContainer>
       <AnimatedButton onClick={() => navigate("/tickets")}>
-        <Button>
-          {" "}
-          <span>
-            My Tickets <ArrowRight />
-          </span>
-        </Button>
+        <span>
+          My Tickets <ArrowRight />
+        </span>
       </AnimatedButton>
     </TicketContainer>
   )

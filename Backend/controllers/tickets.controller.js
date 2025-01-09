@@ -3,7 +3,6 @@ import { User } from "../models/user.model.js";
 import { CancellationRequest } from "../models/cancellationRequest.model.js";
 import QRCode from "qrcode";
 
-// Add ticket to user
 export const addTicketToUser = async (req, res) => {
   try {
     const { username, ticket } = req.body;
@@ -19,6 +18,13 @@ export const addTicketToUser = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
+    // בדיקה ש-orderNumber נשלח מהלקוח
+    if (!ticket.orderNumber) {
+      return res.status(400).json({ message: "Order number is missing" });
+    }
+    console.log("Received Order Number:", ticket.orderNumber);
+
+    // בדיקה של שדות הכרטיס
     if (
       !ticket.movieName ||
       !ticket.selectedSeats ||
@@ -31,6 +37,7 @@ export const addTicketToUser = async (req, res) => {
     }
 
     const qrData = {
+      orderNumber: ticket.orderNumber, // השתמש ב-orderNumber מהלקוח
       movieName: ticket.movieName,
       selectedSeats: ticket.selectedSeats,
       date: ticket.date,
@@ -39,11 +46,13 @@ export const addTicketToUser = async (req, res) => {
       hallNumber: ticket.hallNumber,
     };
 
+    // יצירת QR code
     const qrImage = await QRCode.toDataURL(JSON.stringify(qrData));
 
+    // שמירת הכרטיס במשתמש
     user.tickets.push({
       ...ticket,
-      date: new Date(ticket.date),
+      date: new Date(ticket.date), // הפיכת התאריך לאובייקט Date
       qrData,
       qrImage,
     });
@@ -59,7 +68,6 @@ export const addTicketToUser = async (req, res) => {
   }
 };
 
-// Get user tickets
 export const getUserTickets = async (req, res) => {
   const { username } = req.params;
 
@@ -80,7 +88,6 @@ export const getUserTickets = async (req, res) => {
   }
 };
 
-// Submit cancellation request
 export const submitCancellationRequest = async (req, res) => {
   const { ticketId } = req.params;
   const { reason } = req.body;
@@ -132,7 +139,6 @@ export const submitCancellationRequest = async (req, res) => {
   }
 };
 
-// Get user cancellation requests
 export const getUserCancellationRequests = async (req, res) => {
   const { username } = req.params;
 
@@ -150,7 +156,6 @@ export const getUserCancellationRequests = async (req, res) => {
   }
 };
 
-// Get all cancellation requests (Admin)
 export const getAllCancellationRequests = async (req, res) => {
   try {
     const requests = await CancellationRequest.find()

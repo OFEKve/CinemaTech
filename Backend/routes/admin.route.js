@@ -1,6 +1,8 @@
 import express from "express";
 import { verifyAdmin } from "../middleware/verifyAdmin.js";
 import { protectRoute } from "../middleware/protectRoute.js";
+import { CancellationRequest } from "../models/cancellationRequest.model.js"; // שינוי לייבוא עם סוגריים מסולסלות
+
 import {
   getAllUsers,
   deleteUser,
@@ -41,6 +43,40 @@ adminRouter.put(
   protectRoute,
   verifyAdmin,
   updateCancellationRequestStatus
+);
+adminRouter.get(
+  "/cancellation-requests/unread",
+  protectRoute,
+  verifyAdmin,
+  async (req, res) => {
+    try {
+      console.log("Fetching unread requests...");
+      console.log("CancellationRequest model exists:", !!CancellationRequest); // בדיקה שהמודל קיים
+
+      const unreadRequests = await CancellationRequest.find({
+        status: "pending",
+      })
+        .populate("user", "username")
+        .populate("ticket", "movieName date")
+        .sort({ createdAt: -1 });
+
+      console.log("Found requests:", unreadRequests);
+
+      const formattedRequests = unreadRequests.map((req) => ({
+        reason: req.reason,
+        requestDate: new Date(req.createdAt).toLocaleDateString(),
+      }));
+
+      res.json({ requests: formattedRequests });
+    } catch (error) {
+      console.error("Error fetching unread requests:", error);
+      console.error("Stack trace:", error.stack);
+      res.status(500).json({
+        error: "Failed to fetch unread requests",
+        details: error.message,
+      });
+    }
+  }
 );
 
 export default adminRouter;

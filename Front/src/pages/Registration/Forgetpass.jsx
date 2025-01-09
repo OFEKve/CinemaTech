@@ -26,7 +26,11 @@ const Forgetpass = () => {
     <div className="hero-bg h-screen w-full">
       <header className="mx-auto flex max-w-6xl items-center justify-between p-4">
         <Link to="/">
-          <img src="/netflix-logo.png" alt="logo" className="w-52" />
+          <img
+            src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410637/videos/images/zqjtfyt3ssnhmszf6ope.png"
+            alt="logo"
+            className="w-52"
+          />
         </Link>
       </header>
 

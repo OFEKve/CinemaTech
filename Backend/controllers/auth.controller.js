@@ -14,7 +14,7 @@ export async function signup(req, res) {
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^[0-9]{10,15}$/; // בדיקת טלפון בפורמט 10-15 ספרות
+    const phoneRegex = /^[0-9]{10,15}$/;
 
     if (!emailRegex.test(email)) {
       return res.status(400).json({
@@ -62,12 +62,12 @@ export async function signup(req, res) {
     const hashedPassword = await bcryptjs.hash(password, salt);
 
     const PROFILE_PICS = [
-      "/avatar1.png",
-      "/avatar2.png",
-      "/avatar3.png",
-      "/avatar4.png",
-      "/avatar5.png",
-      "/avatar6.png",
+      "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410636/videos/images/profile-1.png",
+      "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410636/videos/images/profile-2.jpg",
+      "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410635/videos/images/profile-3.jpg",
+      "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410635/videos/images/profile-4.jpg",
+      "https://res.cloudinary.com/duucxuyvk/image/upload/v1736410635/videos/images/profile-5.jpg",
+      "https://res.cloudinary.com/duucxuyvk/image/upload/v1736411824/videos/images/profile-6.jpg",
     ];
     const image = PROFILE_PICS[Math.floor(Math.random() * PROFILE_PICS.length)];
 

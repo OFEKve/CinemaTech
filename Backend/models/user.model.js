@@ -19,23 +19,24 @@ const userSchema = mongoose.Schema({
   },
   phone: {
     type: String,
-    required: false, // טלפון נדרש בעת ההרשמה
-    unique: true, // כדי להבטיח שהטלפון יהיה ייחודי
+    required: false,
+    unique: true,
   },
   isAdmin: {
     type: Boolean,
-    default: false, // משתמש רגיל כברירת מחדל
+    default: false,
   },
   tickets: [
     {
+      orderNumber: { type: String, required: true },
       movieName: { type: String, required: true },
       selectedSeats: [{ type: String, required: false }],
-      qrData: { type: Object }, // שמירת נתוני QR
-      qrImage: { type: String }, // שמירת תמונת QR
-      movieImage: { type: String, required: false }, // שמירת תמונת הסרט
+      qrData: { type: Object },
+      qrImage: { type: String },
+      movieImage: { type: String, required: false },
       createdAt: { type: Date, default: Date.now },
       selectedTimeSlot: { type: String },
-      hallNumber: { type: Number, required: false }, // מספר האולם
+      hallNumber: { type: Number, required: false },
     },
   ],
 });

@@ -152,7 +152,7 @@ const SearchPage = () => {
 
         <ResultsGrid>
           {results
-            .filter((result) => result.poster_path) // סינון סרטים ללא תמונה
+            .filter((result) => result.poster_path)
             .map((result) => (
               <ResultCard
                 key={result.id}

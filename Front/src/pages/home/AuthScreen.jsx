@@ -16,8 +16,8 @@ const AuthScreen = () => {
       {/* Navbar */}
       <header className="flex w-full items-center justify-between px-4 py-2">
         <img
-          src="/netflix-logo.png"
-          alt="Netflix Logo"
+          src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410637/videos/images/zqjtfyt3ssnhmszf6ope.png"
+          alt=" Logo"
           className="w-32 md:w-52"
         />
         <Link
@@ -73,7 +73,11 @@ const AuthScreen = () => {
           </div>
           {/* right side */}
           <div className="relative flex-1">
-            <img src="/tv.png" alt="Tv image" className="relative z-20 mt-4" />
+            <img
+              src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410624/videos/images/ctagatqijheaaik85ids.png"
+              alt="Tv image"
+              className="relative z-20 mt-4"
+            />
             <video
               className="absolute left-1/2 top-1/2 z-10 h-1/2 -translate-x-1/2 -translate-y-1/2"
               style={{ width: "80%" }}
@@ -82,7 +86,10 @@ const AuthScreen = () => {
               muted
               loop
             >
-              <source src="/hero-vid.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/duucxuyvk/video/upload/v1736333398/videos/b9l8ukmknd2mkgtkm7rz.mp4"
+                type="video/mp4"
+              />
             </video>
           </div>
         </div>
@@ -99,7 +106,7 @@ const AuthScreen = () => {
             <div className="relative">
               <div className="relative flex-1">
                 <img
-                  src="/tv.png"
+                  src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410624/videos/images/ctagatqijheaaik85ids.png"
                   alt="Tv image"
                   className="relative z-20 mt-4"
                 />
@@ -110,7 +117,10 @@ const AuthScreen = () => {
                   muted
                   loop
                 >
-                  <source src="pop2.mp4" type="video/mp4" />
+                  <source
+                    src="https://res.cloudinary.com/duucxuyvk/video/upload/v1736410903/videos/idgqgl8lxv1eexfcbact.mp4"
+                    type="video/mp4"
+                  />
                 </video>
               </div>
             </div>
@@ -149,18 +159,21 @@ const AuthScreen = () => {
           {/* right side */}
           <div className="relative flex-1">
             <img
-              src="/device-pile.png"
+              src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410636/videos/images/mjuseapxrjgry2h5dvp2.png"
               alt="Device image"
               className="relative z-20 mt-4"
             />
             <video
-              className="absolute left-1/2 top-2 z-10 h-4/6 max-w-[63%] -translate-x-1/2"
+              className="absolute left-1/2 top-2 z-10 h-3/6 max-w-[62%] -translate-x-1/2"
               playsInline
               autoPlay={true}
               muted
               loop
             >
-              <source src="/seats.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/duucxuyvk/video/upload/v1736333422/videos/boswltxayuhlqujjmubp.mp4"
+                type="video/mp4"
+              />
             </video>
           </div>
         </div>
@@ -173,7 +186,11 @@ const AuthScreen = () => {
         <div className="mx-auto flex max-w-6xl flex-col-reverse items-center justify-center px-4 md:flex-row md:px-2">
           {/* left */}
           <div className="relative flex-1">
-            <img src="/pay.png" alt="Enjoy on your TV" className="mt-4" />
+            <img
+              src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410638/videos/images/kxb86bija6rquk7xvnim.png"
+              alt="Enjoy on your TV"
+              className="mt-4"
+            />
           </div>
           {/* right */}
           <div className="flex-1 text-center md:text-left">

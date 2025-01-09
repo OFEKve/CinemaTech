@@ -7,7 +7,8 @@ const HeroBg = styled.div`
   height: 100vh;
   width: 100%;
 
-  background: url("/hero.png") no-repeat center center/cover;
+  background: url("https://res.cloudinary.com/duucxuyvk/image/upload/v1736410637/videos/images/hero.jpg")
+    no-repeat center center/cover;
 `
 
 const Header = styled.header`
@@ -112,7 +113,10 @@ const LoginPage = () => {
     <HeroBg>
       <Header>
         <Link to="/">
-          <Logo src="/netflix-logo.png" alt="logo" />
+          <Logo
+            src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410637/videos/images/zqjtfyt3ssnhmszf6ope.png"
+            alt="logo"
+          />
         </Link>
       </Header>
 

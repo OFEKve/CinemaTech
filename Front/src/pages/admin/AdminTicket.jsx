@@ -200,8 +200,10 @@ const AdminTicket = () => {
   const [flippedCards, setFlippedCards] = useState({})
   const [searchQuery, setSearchQuery] = useState("")
   const [filteredUsers, setFilteredUsers] = useState([])
+  const [visibleTickets, setVisibleTickets] = useState({}) // שמירת מצב ה-Hide/Show
 
   const navigate = useNavigate()
+
   const handleSearch = (e) => {
     const query = e.target.value.toLowerCase()
     setSearchQuery(query)
@@ -214,6 +216,7 @@ const AdminTicket = () => {
       )
     )
   }
+
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -242,6 +245,13 @@ const AdminTicket = () => {
     setFlippedCards((prev) => ({
       ...prev,
       [ticketId]: !prev[ticketId],
+    }))
+  }
+
+  const handleToggleTickets = (userId) => {
+    setVisibleTickets((prev) => ({
+      ...prev,
+      [userId]: !prev[userId],
     }))
   }
 
@@ -314,44 +324,61 @@ const AdminTicket = () => {
               <td>{user.email}</td>
               <td>{user.phone}</td>
               <td>
-                <TicketContainer>
-                  {user.tickets &&
-                    user.tickets.map((ticket) => (
-                      <TicketCard
-                        key={ticket._id}
-                        onMouseEnter={() => handleFlip(ticket._id)}
-                        onMouseLeave={() => handleFlip(ticket._id)}
-                      >
-                        <CardInner isFlipped={flippedCards[ticket._id]}>
-                          <CardFront>{ticket.movieName}</CardFront>
-                          <CardBack>
-                            <p>
-                              <strong>Movie:</strong> {ticket.movieName}
-                            </p>
-                            <p>
-                              <strong>Date:</strong>{" "}
-                              {ticket.qrData?.date || "N/A"}
-                            </p>
-                            <p>
-                              <strong>Time:</strong>{" "}
-                              {ticket.selectedTimeSlot || "N/A"}
-                            </p>
-                            <p>
-                              <strong>Hall:</strong>{" "}
-                              {ticket.hallNumber || "N/A"}
-                            </p>
-                            <DeleteButton
-                              onClick={() =>
-                                handleDeleteTicket(user._id, ticket._id)
-                              }
-                            >
-                              <FaTrashAlt /> Delete
-                            </DeleteButton>
-                          </CardBack>
-                        </CardInner>
-                      </TicketCard>
-                    ))}
-                </TicketContainer>
+                <button
+                  onClick={() => handleToggleTickets(user._id)}
+                  style={{
+                    marginBottom: "10px",
+                    padding: "8px 12px",
+                    borderRadius: "5px",
+                    backgroundColor: "#1abc9c",
+                    color: "#fff",
+                    border: "none",
+                    cursor: "pointer",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {visibleTickets[user._id] ? "Hide Tickets" : "Show Tickets"}
+                </button>
+                {visibleTickets[user._id] && (
+                  <TicketContainer>
+                    {user.tickets &&
+                      user.tickets.map((ticket) => (
+                        <TicketCard
+                          key={ticket._id}
+                          onMouseEnter={() => handleFlip(ticket._id)}
+                          onMouseLeave={() => handleFlip(ticket._id)}
+                        >
+                          <CardInner isFlipped={flippedCards[ticket._id]}>
+                            <CardFront>{ticket.movieName}</CardFront>
+                            <CardBack>
+                              <p>
+                                <strong>Movie:</strong> {ticket.movieName}
+                              </p>
+                              <p>
+                                <strong>Date:</strong>{" "}
+                                {ticket.qrData?.date || "N/A"}
+                              </p>
+                              <p>
+                                <strong>Time:</strong>{" "}
+                                {ticket.selectedTimeSlot || "N/A"}
+                              </p>
+                              <p>
+                                <strong>Hall:</strong>{" "}
+                                {ticket.hallNumber || "N/A"}
+                              </p>
+                              <DeleteButton
+                                onClick={() =>
+                                  handleDeleteTicket(user._id, ticket._id)
+                                }
+                              >
+                                <FaTrashAlt /> Delete
+                              </DeleteButton>
+                            </CardBack>
+                          </CardInner>
+                        </TicketCard>
+                      ))}
+                  </TicketContainer>
+                )}
               </td>
             </tr>
           ))}

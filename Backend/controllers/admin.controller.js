@@ -109,7 +109,7 @@ export const deleteUserTicket = async (req, res) => {
 
 export const updateCancellationRequestStatus = async (req, res) => {
   const { requestId } = req.params;
-  const { status } = req.body; // expected values: 'approved', 'rejected'
+  const { status } = req.body;
 
   try {
     if (!["approved", "rejected"].includes(status)) {

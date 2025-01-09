@@ -12,6 +12,7 @@ import MovieSlider from "../../components/MovieSlider"
 import { useState } from "react"
 import toast from "react-hot-toast"
 import axios from "axios"
+import WatchPageSkeleton from "../../components/skeletons/WatchPageSkeleton"
 
 const HomeScreen = () => {
   const { trendingContent } = useGetTrendingContent()
@@ -59,9 +60,7 @@ const HomeScreen = () => {
           <Navbar />
         </div>
 
-        {imgLoading && (
-          <div className="shimmer absolute left-0 top-0 -z-10 flex h-full w-full items-center justify-center bg-black/70" />
-        )}
+        {imgLoading && <WatchPageSkeleton />}
 
         {trendingContent?.backdrop_path && (
           <img

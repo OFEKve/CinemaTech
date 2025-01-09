@@ -37,7 +37,8 @@ const NotFoundWrapper = styled.div`
   min-height: 100vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("/404.png") no-repeat center center/cover;
+    url("https://res.cloudinary.com/duucxuyvk/image/upload/v1736410636/videos/images/nblrtv2qegl4of2ahrjj.png")
+      no-repeat center center/cover;
   color: white;
   text-align: center;
   padding: 20px;

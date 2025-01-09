@@ -107,7 +107,7 @@ const DatePickerContainer = styled.div`
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: bold;
-    color: #f0f0f0;
+    color: #fff;
   }
 
   input {
@@ -116,8 +116,8 @@ const DatePickerContainer = styled.div`
     border-radius: 10px;
     font-size: 16px;
     outline: none;
-    background-color: #222;
-    color: #fff;
+    background-color: #fff; /* שינוי לרקע לבן */
+    color: #222; /* שינוי צבע הטקסט לכהה כדי שיהיה ברור על רקע לבן */
 
     @media (max-width: 768px) {
       padding: 10px;
@@ -191,7 +191,7 @@ const LogoContainer = styled.div`
 const Seat = styled.div`
   width: 40px;
   height: 40px;
-  background-image: url("/chair-green.png");
+  background-image: url("https://res.cloudinary.com/duucxuyvk/image/upload/v1736410636/videos/images/chair-green.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -204,13 +204,13 @@ const Seat = styled.div`
   position: relative;
 
   &.selected {
-    background-image: url("/chair-blue.png");
+    background-image: url("https://res.cloudinary.com/duucxuyvk/image/upload/v1736410636/videos/images/chair-blue.jpg");
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 255, 0.3); /* הדגשה */
   }
 
   &.reserved {
-    background-image: url("/chair-red.png");
+    background-image: url("https://res.cloudinary.com/duucxuyvk/image/upload/v1736410636/videos/images/chair-red.jpg");
     cursor: not-allowed;
     opacity: 0.6;
   }
@@ -372,29 +372,14 @@ const VideoFrame = styled.div`
   width: 100%;
   height: 100%;
   background-color: #333;
-  border: 5px solid #444;
   border-radius: 15px;
-  box-shadow:
-    0px 4px 10px rgba(0, 0, 0, 0.5),
-    0 0 15px rgba(255, 255, 255, 0.2);
+
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: pulse 10s infinite;
 
-  @keyframes pulse {
-    0%,
-    100% {
-      box-shadow:
-        0px 4px 10px rgba(0, 0, 0, 0.5),
-        0 0 15px rgba(255, 255, 255, 0.2);
-    }
-    50% {
-      box-shadow:
-        0px 4px 15px rgba(0, 0, 0, 0.7),
-        0 0 25px rgba(255, 255, 255, 0.5);
-    }
+
   }
 
   video {
@@ -512,7 +497,10 @@ const SeatPlan = ({ username }) => {
         <VideoFrame>
           <div className="screen-frame">
             <video autoPlay muted loop>
-              <source src="/vid.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/duucxuyvk/video/upload/f_mp4/videos/hs9hg6yeu1yw4pfxigjk.mp4"
+                type="video/mp4"
+              />
             </video>
           </div>
         </VideoFrame>
@@ -521,7 +509,10 @@ const SeatPlan = ({ username }) => {
         <VideoFrame>
           <div className="screen-frame">
             <video autoPlay muted loop>
-              <source src="/vid.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/duucxuyvk/video/upload/f_mp4/videos/hs9hg6yeu1yw4pfxigjk.mp4"
+                type="video/mp4"
+              />
             </video>
           </div>
         </VideoFrame>

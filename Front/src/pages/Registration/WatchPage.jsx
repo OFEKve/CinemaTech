@@ -378,16 +378,6 @@ const WatchPage = () => {
               )}
             </Subtitle>
             <Overview>{content?.overview}</Overview>
-          </div>
-          <PosterImage
-            src={
-              content?.poster_path
-                ? ORIGINAL_IMG_BASE_URL + content?.poster_path
-                : "/default-poster.png"
-            }
-            alt="Poster image"
-          />
-          <div>
             <ButtonContainer>
               <StyledButton
                 onClick={() => {
@@ -403,10 +393,23 @@ const WatchPage = () => {
                 Select Seats
               </StyledButton>
             </ButtonContainer>
-
+          </div>
+          <PosterImage
+            src={
+              content?.poster_path
+                ? ORIGINAL_IMG_BASE_URL + content?.poster_path
+                : "/default-poster.png"
+            }
+            alt="Poster image"
+          />
+          <div>
             <VideoWrapper>
               <div className="video-tv-wrapper">
-                <img src="/tv.png" alt="TV Frame" className="tv-frame" />
+                <img
+                  src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410624/videos/images/ctagatqijheaaik85ids.png"
+                  alt="TV Frame"
+                  className="tv-frame"
+                />
                 <div className="video-inside-tv">
                   {trailers.length > 0 ? (
                     <ReactPlayer
@@ -418,7 +421,7 @@ const WatchPage = () => {
                     />
                   ) : (
                     <img
-                      src="/not found.png"
+                      src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410638/videos/images/zylsgwqrrs5naz8yc6qi.png"
                       alt="No trailers available"
                       style={{
                         width: "90%",

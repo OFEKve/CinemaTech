@@ -103,7 +103,10 @@ const Navbar = () => {
     <Header>
       <div className="flex items-center gap-8">
         <Link to="/">
-          <Logo src="/netflix-logo.png" alt="Netflix Logo" />
+          <Logo
+            src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410637/videos/images/zqjtfyt3ssnhmszf6ope.png"
+            alt="Netflix Logo"
+          />
         </Link>
         <NavLinks>
           {user?.isAdmin && (

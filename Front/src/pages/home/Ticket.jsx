@@ -322,31 +322,15 @@ const VideoFrame = styled.div`
   width: 100%;
   height: 100%;
   background-color: #333;
-  border: 5px solid #444;
+
   border-radius: 15px;
-  box-shadow:
-    0px 4px 10px rgba(0, 0, 0, 0.5),
-    0 0 15px rgba(255, 255, 255, 0.2);
+
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   animation: pulse 10s infinite;
-
-  @keyframes pulse {
-    0%,
-    100% {
-      box-shadow:
-        0px 4px 10px rgba(0, 0, 0, 0.5),
-        0 0 15px rgba(255, 255, 255, 0.2);
-    }
-    50% {
-      box-shadow:
-        0px 4px 15px rgba(0, 0, 0, 0.7),
-        0 0 25px rgba(255, 255, 255, 0.5);
-    }
   }
-
   video {
     width: 100%;
     height: 100%;
@@ -452,54 +436,6 @@ const Tickets = ({ user }) => {
     } catch (error) {
       toast.error("Server error. Please try again.")
     }
-  }
-
-  const handleDownload = (ticket) => {
-    const doc = new jsPDF()
-
-    doc.setFont("helvetica", "bold")
-    doc.setFontSize(22)
-    doc.setTextColor(40, 40, 40)
-    doc.text("CinemaTech Ticket ", 105, 20, { align: "center" })
-
-    // הוספת קו הפרדה
-    doc.setDrawColor(200, 0, 0) // צבע אדום
-    doc.setLineWidth(0.5)
-    doc.line(20, 30, 190, 30)
-
-    // מידע על המשתמש
-    doc.setFont("helvetica", "normal")
-    doc.setFontSize(14)
-    doc.setTextColor(60, 60, 60)
-    doc.text(`Hello, ${user.username}`, 20, 40)
-
-    // מידע על הסרט
-    doc.setFont("helvetica", "bold")
-    doc.setFontSize(16)
-    doc.setTextColor(30, 30, 30)
-    doc.text("Movie Information:", 20, 50)
-
-    doc.setFont("helvetica", "normal")
-    doc.setFontSize(12)
-    doc.setTextColor(60, 60, 60)
-    doc.text(` Movie: ${ticket.movieName}`, 20, 60)
-    doc.text(`Seat: ${ticket.selectedSeat}`, 20, 70)
-    doc.text(` Hall: ${ticket.hallNumber}`, 20, 80)
-    doc.text(` Time: ${ticket.selectedTimeSlot}`, 20, 90)
-    doc.text(` Date: ${ticket.selectedDate}`, 20, 100)
-
-    // הוספת קו הפרדה נוסף
-    doc.setDrawColor(0, 0, 0)
-    doc.line(20, 110, 190, 110)
-
-    // הוספת פסקת תודה
-    doc.setFont("helvetica", "italic")
-    doc.setFontSize(14)
-    doc.setTextColor(100, 100, 100)
-    doc.text("Thank you for choosing CinemaTech! Enjoy the movie!", 105, 120, {
-      align: "center",
-    })
-    doc.save(`ticket-${ticket.selectedSeat}.pdf`)
   }
 
   useEffect(() => {
@@ -621,14 +557,17 @@ const Tickets = ({ user }) => {
         <VideoFrame>
           <div className="screen-frame">
             <video autoPlay muted loop>
-              <source src="/vid.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/duucxuyvk/video/upload/f_mp4/videos/hs9hg6yeu1yw4pfxigjk.mp4"
+                type="video/mp4"
+              />
             </video>
           </div>
         </VideoFrame>
       </VideoWrapper>
       <Link to="/">
         <img
-          src="../netflix-logo.png"
+          src="https://res.cloudinary.com/duucxuyvk/image/upload/v1736410637/videos/images/zqjtfyt3ssnhmszf6ope.png"
           alt="Netflix Logo"
           style={{ width: "150px", height: "auto" }}
         />
@@ -798,7 +737,11 @@ const Tickets = ({ user }) => {
         <VideoFrame>
           <div className="screen-frame">
             <video autoPlay muted loop>
-              <source src="/vid.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/duucxuyvk/video/upload/f_mp4/videos/hs9hg6yeu1yw4pfxigjk.mp4
+"
+                type="video/mp4"
+              />
             </video>
           </div>
         </VideoFrame>

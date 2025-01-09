@@ -9,7 +9,7 @@
 }
 .hero-bg {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)),
-    url("/hero.png");
+    url("https://res.cloudinary.com/duucxuyvk/image/upload/v1736410637/videos/images/hero.jpg");
 }
 
 .shimmer {
