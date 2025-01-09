@@ -3,13 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "Backend/server.js",
   "scripts": {
-    "setup": "npm install && cd Front && npm install && cd ../Backend && npm install",
-    "client": "cd Front && npm run dev",
-    "build": "cd Front && npm run build && cd .. && powershell -Command \"if (!(Test-Path 'Backend/public')) { New-Item -ItemType Directory -Path 'Backend/public' }; Copy-Item -Path 'Front/dist/*' -Destination 'Backend/public' -Recurse -Force\"",
-    "server": "cd Backend && nodemon server.js",
-    "dev": "concurrently \"cd Backend && npm run dev\" \"cd Front && npm run dev\""
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "nodemon Backend/server.js"
   },
   "dependencies": {
     "@paypal/checkout-server-sdk": "^1.0.3",
@@ -34,6 +32,10 @@
   "devDependencies": {
     "concurrently": "^8.0.0",
     "eslint": "^9.13.0",
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "vite": "^6.0.7"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
