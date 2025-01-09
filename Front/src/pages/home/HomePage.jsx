@@ -1,5 +1,5 @@
 import HomeScreen from "./HomeScreen"
-import AuthScreen from "./AuthScreen"
+import AuthScreen from "..home/AuthScreen"
 import { useAuthStore } from "../../store/authUser"
 const HomePage = () => {
   const { user } = useAuthStore()
