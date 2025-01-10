@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 import AdminUsers from "./AdminUsers"
 import AdminSettings from "./AdminSettings"
-import Sidebar from "./Sidebar"
+import Sidebar from "./SideBar"
 import AdminCancellationRequests from "./AdminCancellationRequests"
 const DashboardContainer = styled.div`
   display: flex;
