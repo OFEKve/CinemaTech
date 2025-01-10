@@ -31,7 +31,7 @@ const HomeScreen = () => {
     setIsSearching(true)
     try {
       const res = await axios.get(
-        `http://localhost:3000/api/v1/search/movie/${searchTerm}`,
+        `https://cinematech-1.onrender.com/api/v1/search/movie/${searchTerm}`,
         { withCredentials: true }
       )
       setSearchResults(res.data.content)

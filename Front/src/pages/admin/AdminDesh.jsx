@@ -144,7 +144,7 @@ const AdminDash = () => {
     const checkForNewRequests = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/api/v1/admin/cancellation-requests/unread",
+          "https://cinematech-1.onrender.com/api/v1/admin/cancellation-requests/unread",
           { credentials: "include" }
         )
         if (!response.ok) {

@@ -239,16 +239,19 @@ const TicketGenerator = ({
         ticket: qrData,
       })
 
-      const response = await fetch("http://localhost:3000/api/v1/tickets", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username,
-          ticket: qrData,
-        }),
-      })
+      const response = await fetch(
+        "https://cinematech-1.onrender.com/api/v1/tickets",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username,
+            ticket: qrData,
+          }),
+        }
+      )
 
       if (!response.ok) {
         const data = await response.json()

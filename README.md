@@ -56,7 +56,7 @@ Ensure you have the following installed:
    npm run client
    ```
 
-5. Access the client at `http://localhost:3000`.
+5. Access the client at `https://cinematech-1.onrender.com`.
 
 6. Start the server:
    ```bash

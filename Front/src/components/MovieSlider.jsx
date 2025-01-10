@@ -146,7 +146,7 @@ const MovieSlider = ({ category }) => {
   useEffect(() => {
     const getContent = async () => {
       const res = await axios.get(
-        `http://localhost:3000/api/v1/${contentType}/${category}`,
+        `https://cinematech-1.onrender.com/api/v1/${contentType}/${category}`,
         {
           withCredentials: true,
         }

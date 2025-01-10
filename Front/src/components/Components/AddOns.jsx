@@ -228,7 +228,7 @@ const AddOns = ({
       setCurrentStep(3)
 
       const response = await fetch(
-        "http://localhost:3000/api/v1/seat/reserve",
+        "https://cinematech-1.onrender.com/api/v1/seat/reserve",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

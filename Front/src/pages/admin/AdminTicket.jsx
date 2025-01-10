@@ -221,7 +221,7 @@ const AdminTicket = () => {
     const fetchUsers = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/api/v1/admin/users",
+          "https://cinematech-1.onrender.com/api/v1/admin/users",
           {
             credentials: "include",
           }
@@ -258,7 +258,7 @@ const AdminTicket = () => {
   const handleDeleteTicket = async (userId, ticketId) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/admin/users/${userId}/tickets/${ticketId}`,
+        `https://cinematech-1.onrender.com/api/v1/admin/users/${userId}/tickets/${ticketId}`,
         {
           method: "DELETE",
           credentials: "include",

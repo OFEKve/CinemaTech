@@ -262,7 +262,7 @@ const WatchPage = () => {
     const getTrailers = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/v1/${contentType}/${id}/trailers`,
+          `https://cinematech-1.onrender.com/api/v1/${contentType}/${id}/trailers`,
           { withCredentials: true }
         )
         setTrailers(res.data.trailers)
@@ -279,7 +279,7 @@ const WatchPage = () => {
     const getSimilarContent = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/v1/${contentType}/${id}/similar`,
+          `https://cinematech-1.onrender.com/api/v1/${contentType}/${id}/similar`,
           { withCredentials: true }
         )
         setSimilarContent(res.data.similar)
@@ -296,7 +296,7 @@ const WatchPage = () => {
     const getContentDetails = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/v1/${contentType}/${id}/details`,
+          `https://cinematech-1.onrender.com/api/v1/${contentType}/${id}/details`,
           { withCredentials: true }
         )
         setContent(res.data.content)

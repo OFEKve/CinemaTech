@@ -166,7 +166,7 @@ const AdminUsers = () => {
     const fetchUsers = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/api/v1/admin/users",
+          "https://cinematech-1.onrender.com/api/v1/admin/users",
           {
             credentials: "include",
           }
@@ -202,7 +202,7 @@ const AdminUsers = () => {
   const handleDeleteUser = async (userId) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/admin/users/${userId}`,
+        `https://cinematech-1.onrender.com/api/v1/admin/users/${userId}`,
         {
           method: "DELETE",
           credentials: "include",
@@ -222,7 +222,7 @@ const AdminUsers = () => {
   const handleUpdateRole = async (userId, isAdmin) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/admin/users/${userId}/role`,
+        `https://cinematech-1.onrender.com/api/v1/admin/users/${userId}/role`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

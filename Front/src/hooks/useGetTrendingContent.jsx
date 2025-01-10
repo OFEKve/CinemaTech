@@ -9,7 +9,7 @@ const useGetTrendingContent = () => {
   useEffect(() => {
     const getTrendingContent = async () => {
       const res = await axios.get(
-        `http://localhost:3000/api/v1/${contentType}/trending`,
+        `https://cinematech-1.onrender.com/api/v1/${contentType}/trending`,
         {
           withCredentials: true,
         }

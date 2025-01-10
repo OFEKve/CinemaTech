@@ -139,7 +139,7 @@ const SpiralGallery = ({ categoryName, onAddItem }) => {
     const fetchMenuItems = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/v1/menu/${categoryName}`,
+          `https://cinematech-1.onrender.com/api/v1/menu/${categoryName}`,
           {
             withCredentials: true,
           }

@@ -13,7 +13,7 @@ export const useAuthStore = create((set) => ({
     set({ isSigningUp: true })
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/auth/signup",
+        "https://cinematech-1.onrender.com/api/v1/auth/signup",
         credentials,
         {
           withCredentials: true,
@@ -30,7 +30,7 @@ export const useAuthStore = create((set) => ({
     set({ isLoggingIn: true })
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/auth/login",
+        "https://cinematech-1.onrender.com/api/v1/auth/login",
         credentials,
         {
           withCredentials: true,
@@ -45,7 +45,7 @@ export const useAuthStore = create((set) => ({
   logout: async () => {
     set({ isLoggingOut: true })
     try {
-      await axios.post("http://localhost:3000/api/v1/auth/logout", {
+      await axios.post("https://cinematech-1.onrender.com/api/v1/auth/logout", {
         createntials: true,
       })
       set({ user: null, isLoggingOut: false })
@@ -59,7 +59,7 @@ export const useAuthStore = create((set) => ({
     set({ isCheckingAuth: true })
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/v1/auth/authCheck",
+        "https://cinematech-1.onrender.com/api/v1/auth/authCheck",
         {
           withCredentials: true,
         }
@@ -75,7 +75,7 @@ export const useAuthStore = create((set) => ({
     set({ isSubmittingForgetPassword: true })
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/auth/request-password-reset",
+        "https://cinematech-1.onrender.com/api/v1/auth/request-password-reset",
         { email },
         {
           withCredentials: true,

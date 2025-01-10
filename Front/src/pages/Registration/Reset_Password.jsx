@@ -27,7 +27,7 @@ const ResetPassword = () => {
     try {
       setIsSubmitting(true)
       const response = await axios.post(
-        "http://localhost:3000/api/v1/auth/reset-password",
+        "https://cinematech-1.onrender.com/api/v1/auth/reset-password",
         {
           token,
           newPassword: password,

@@ -429,7 +429,7 @@ const SeatPlan = ({ username }) => {
     const fetchReservedSeats = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/v1/seat/reserved/${movieId}?timeSlot=${selectedTimeSlot}&date=${selectedDate}`,
+          `https://cinematech-1.onrender.com/api/v1/seat/reserved/${movieId}?timeSlot=${selectedTimeSlot}&date=${selectedDate}`,
           { withCredentials: true }
         )
         const data = await response.json()
@@ -453,7 +453,7 @@ const SeatPlan = ({ username }) => {
     const fetchHallNumber = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/v1/halls/${movieId}?timeSlot=${selectedTimeSlot}`
+          `https://cinematech-1.onrender.com/api/v1/halls/${movieId}?timeSlot=${selectedTimeSlot}`
         )
         const data = await response.json()
 

@@ -147,7 +147,7 @@ const AdminCancellationRequests = () => {
     const fetchRequests = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/v1/admin/cancellation-requests?status=${statusFilter}`,
+          `https://cinematech-1.onrender.com/api/v1/admin/cancellation-requests?status=${statusFilter}`,
           { credentials: "include" }
         )
         const data = await response.json()
@@ -168,7 +168,7 @@ const AdminCancellationRequests = () => {
   const handleUpdateStatus = async (requestId, status) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/admin/cancellation-requests/${requestId}/status`,
+        `https://cinematech-1.onrender.com/api/v1/admin/cancellation-requests/${requestId}/status`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

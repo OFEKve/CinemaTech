@@ -414,7 +414,7 @@ const Tickets = ({ user }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/tickets/${ticketId}/cancellation`,
+        `https://cinematech-1.onrender.com/api/v1/tickets/${ticketId}/cancellation`,
         {
           method: "POST",
           headers: {
@@ -449,7 +449,7 @@ const Tickets = ({ user }) => {
   const fetchCancellationRequests = async () => {
     try {
       const response = await fetch(
-        `  http://localhost:3000/api/v1/tickets/${user.username}/cancellation-requests`,
+        `  https://cinematech-1.onrender.com/api/v1/tickets/${user.username}/cancellation-requests`,
         {
           method: "GET",
           headers: {
@@ -477,7 +477,7 @@ const Tickets = ({ user }) => {
     const fetchTickets = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/v1/tickets/${user.username}`,
+          `https://cinematech-1.onrender.com/api/v1/tickets/${user.username}`,
           {
             method: "GET",
             headers: {
